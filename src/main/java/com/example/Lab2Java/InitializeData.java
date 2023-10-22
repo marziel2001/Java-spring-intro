@@ -69,7 +69,6 @@ public class InitializeData implements InitializingBean {
             .brand(sony)
             .build();
 
-
         modelService.create(a7_iii);
         modelService.create(rx100);
         modelService.create(a6600);
@@ -81,6 +80,7 @@ public class InitializeData implements InitializingBean {
                 .announceYear(2012)
                 .brand(nikon)
                 .build();
+
             Model d850  = Model.builder()
                 .uuid(UUID.fromString("729e14eb-fb57-46e0-b88b-ab601fec0c50"))
                 .name("D850")
@@ -88,6 +88,7 @@ public class InitializeData implements InitializingBean {
                 .announceYear(2017)
                 .brand(nikon)
                 .build();
+
             Model z6 = Model.builder()
                 .uuid(UUID.fromString("9fadd584-8b0f-4e25-8a61-6dc74c8f1e29"))
                 .name("Z6")
@@ -99,7 +100,5 @@ public class InitializeData implements InitializingBean {
         modelService.create(d800);
         modelService.create(d850);
         modelService.create(z6);
-
-        modelService.deleteModel("Nikon", "D800");
     }
 }

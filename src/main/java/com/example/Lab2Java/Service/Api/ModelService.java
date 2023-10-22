@@ -11,6 +11,7 @@ public interface ModelService {
     Optional<Model> find(String name);
 
     List<Model> findAllByBrand(String name);
+
     List<Model> listAll();
 
     void addModelToBrand(String brand, Model model);

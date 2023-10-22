@@ -54,15 +54,15 @@ public class ModelDefaultService implements ModelService {
     @Override
     public void deleteModel(String brand, String model) {
         Optional<Brand> b = brandRepository.findAllByName(brand);
-
-
+        Optional<Model> m = repository.findAllByName(model);
 
         if(b.isPresent()) {
-            brandRepository.findAllByName(brand).get().models.stream().forEach(System.out::println);
-
-
-
-//            repository.deleteByName(model);
+            if(m.isPresent()) {
+                repository.delete(m.get());
+            }
+            else {
+                System.out.println("model not found in database");
+            }
         }
         else {
             System.out.println("Brand does not exist in database");

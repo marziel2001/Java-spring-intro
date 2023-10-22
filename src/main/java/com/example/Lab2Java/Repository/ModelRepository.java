@@ -18,5 +18,4 @@ public interface ModelRepository extends JpaRepository<Model, UUID> {
     Optional<Model> findAllByName(String name);
     List<Model> findAll();
 
-    void deleteByName(String name);
 }

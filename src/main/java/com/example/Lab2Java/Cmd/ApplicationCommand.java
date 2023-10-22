@@ -50,7 +50,8 @@ public class ApplicationCommand implements CommandLineRunner {
                     System.out.println(modelName);
 
                     modelService.deleteModel(brandName, modelName);
-                    service.listAll();
+
+                    modelService.listAll().forEach(System.out::println);
                 }
                 case "add_model" -> {
 

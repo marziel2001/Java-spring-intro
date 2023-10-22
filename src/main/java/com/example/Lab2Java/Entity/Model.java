@@ -19,6 +19,7 @@ public class Model implements Comparable<Model>, Serializable {
 
     @EqualsAndHashCode.Exclude // to avoid circular dependencies
     @ManyToOne
+    @JoinColumn
     private Brand brand;
 
     private String name;

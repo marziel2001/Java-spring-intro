@@ -30,8 +30,8 @@ public class Brand implements Comparable<Brand>, Serializable {
     private Double brandValueDollars;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "brand")
-    public List<Model> models;
+    @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Model> models;
 
     @Override
     public int compareTo(Brand o) {
