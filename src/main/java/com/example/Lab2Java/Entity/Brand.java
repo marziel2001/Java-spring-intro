@@ -31,7 +31,7 @@ public class Brand implements Comparable<Brand>, Serializable {
 
     @ToString.Exclude
     @OneToMany(mappedBy = "brand")
-    private List<Model> models;
+    public List<Model> models;
 
     @Override
     public int compareTo(Brand o) {

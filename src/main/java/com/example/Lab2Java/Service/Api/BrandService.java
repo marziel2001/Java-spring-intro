@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface BrandService {
 
-    List<Brand> findAll(String name);
+//    List<Brand> find(String name);
+    List<Brand> listAll();
 
     void create(Brand brand);
 
