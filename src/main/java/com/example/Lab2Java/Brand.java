@@ -1,12 +1,11 @@
 package com.example.Lab2Java;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
 import java.util.LinkedList;
+import java.util.UUID;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,12 +14,22 @@ import java.util.LinkedList;
 @Entity
 @Table(name = "brands")
 public class Brand implements Comparable<Brand>, Serializable {
+
     @Id
+    private UUID uuid;
+
     private String name;
+
+    @Column(name = "year_of_est")
     private Integer yearOfEst;
+
     private String country;
+
+    @Column(name = "brand_value_dollars")
     private Double brandValueDollars;
+
     @ToString.Exclude
+    @OneToMany
     public LinkedList<Model> models;
 
     @Override
