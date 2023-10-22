@@ -1,4 +1,4 @@
-package com.example.Lab2Java;
+package com.example.Lab2Java.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -30,7 +30,7 @@ public class Brand implements Comparable<Brand>, Serializable {
 
     @ToString.Exclude
     @OneToMany
-    public LinkedList<Model> models;
+    private LinkedList<Model> models;
 
     @Override
     public int compareTo(Brand o) {

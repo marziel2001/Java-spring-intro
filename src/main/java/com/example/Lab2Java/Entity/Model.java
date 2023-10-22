@@ -1,4 +1,4 @@
-package com.example.Lab2Java;
+package com.example.Lab2Java.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;

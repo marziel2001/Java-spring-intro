@@ -1,6 +1,5 @@
-package com.example.Lab2Java;
+package com.example.Lab2Java.Entity;
 
-import jakarta.annotation.Resource;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
