@@ -35,7 +35,6 @@ public class InitializeData implements InitializingBean {
             .country("Japan")
             .brandValueDollars(3450000000.00)
             .yearOfEst(1917)
-            .models(new LinkedList<>())
             .build();
 
         brandService.create(sony);
@@ -49,6 +48,8 @@ public class InitializeData implements InitializingBean {
             .build();
 
         modelService.create(a7_iii);
+
+        System.out.println(brandService.findAll("Nikon"));
 
         System.out.println("Data initialized");
     }

@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -29,8 +30,8 @@ public class Brand implements Comparable<Brand>, Serializable {
     private Double brandValueDollars;
 
     @ToString.Exclude
-    @OneToMany
-    private LinkedList<Model> models;
+    @OneToMany(mappedBy = "brand")
+    private List<Model> models;
 
     @Override
     public int compareTo(Brand o) {
