@@ -19,5 +19,4 @@ public interface ModelService {
     void deleteModel(String brand, String model);
 
     void create(Model model);
-
 }

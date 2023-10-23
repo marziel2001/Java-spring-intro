@@ -15,6 +15,7 @@ import java.util.Optional;
 public class ModelDefaultService implements ModelService {
 
     private final ModelRepository repository;
+
     private final BrandRepository brandRepository;
 
     @Autowired
@@ -32,6 +33,7 @@ public class ModelDefaultService implements ModelService {
     public List<Model> findAllByBrand(String name) {
         return repository.findAllByBrand_Name(name);
     }
+
     @Override
     public List<Model> listAll() {
         return repository.findAll();

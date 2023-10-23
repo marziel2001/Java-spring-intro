@@ -32,6 +32,14 @@ public class ApplicationCommand implements CommandLineRunner {
         boolean loop = true;
 
         while(loop) {
+
+            System.out.println("\nAvailable commands:\n" +
+                "get_brands - lists all brands\n" +
+                "get_models - lists all models from all brands\n" +
+                "delete_model\n" +
+                "add_model - lets create new model under the existing brand\n" +
+                "quit - to quit the app\n");
+
             command = scanner.nextLine();
             switch (command) {
                 case "get_brands" -> {
@@ -43,21 +51,24 @@ public class ApplicationCommand implements CommandLineRunner {
                 case "delete_model" -> {
                     System.out.println("please provide brand name:");
                     String brandName = scanner.nextLine();
-                    System.out.println(brandName);
+                    System.out.println("brand name:" + brandName);
 
                     System.out.println("please provide model name:");
                     String modelName = scanner.nextLine();
-                    System.out.println(modelName);
+                    System.out.println("model: " + modelName);
 
                     modelService.deleteModel(brandName, modelName);
 
                     modelService.listAll().forEach(System.out::println);
                 }
                 case "add_model" -> {
-
                     System.out.println("please provide uuid:");
                     String uuid = scanner.nextLine();
                     System.out.println("uuid: " + uuid);
+
+                    System.out.println("please provide brand name");
+                    String brandName = scanner.nextLine();
+                    System.out.println("brand:"+brandName);
 
                     System.out.println("please provide name:");
                     String name = scanner.nextLine();
@@ -72,10 +83,6 @@ public class ApplicationCommand implements CommandLineRunner {
                     scanner.nextLine();
                     System.out.println("year:"+year);
 
-                    System.out.println("please provide brand name");
-                    String brandName = scanner.nextLine();
-                    System.out.println("brand:"+brandName);
-
                     modelService.addModelToBrand(brandName,
                         Model.builder()
                         .uuid(UUID.fromString(uuid))
@@ -84,12 +91,15 @@ public class ApplicationCommand implements CommandLineRunner {
                         .announceYear(year)
                         .build()
                     );
+
+                    modelService.listAll().forEach(System.out::println);
                 }
-                case "quit" -> {
-                    loop = false;
-                }
+                case "quit" -> loop = false;
             }
         }
-
     }
 }
+
+// example UUIDs:
+//  e6f6f3da-7986-468a-96c6-9c29649e3411
+//  8d3d10dc-f842-44cf-acce-86304603325c

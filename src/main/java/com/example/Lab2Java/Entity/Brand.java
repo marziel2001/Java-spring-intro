@@ -2,9 +2,7 @@ package com.example.Lab2Java.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.io.Serializable;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 

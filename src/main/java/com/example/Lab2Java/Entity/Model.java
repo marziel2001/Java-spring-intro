@@ -2,7 +2,6 @@ package com.example.Lab2Java.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -25,6 +24,7 @@ public class Model implements Comparable<Model>, Serializable {
     private String name;
 
     private Double price;
+
     @Column(name = "announce_year")
     private Integer announceYear;
 
