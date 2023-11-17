@@ -42,12 +42,8 @@ public class ApplicationCommand implements CommandLineRunner {
 
             command = scanner.nextLine();
             switch (command) {
-                case "get_brands" -> {
-                    service.listAll().forEach(System.out::println);
-                }
-                case "get_models" -> {
-                    modelService.listAll().forEach(System.out::println);
-                }
+                case "get_brands" -> service.listAll().forEach(System.out::println);
+                case "get_models" -> modelService.listAll().forEach(System.out::println);
                 case "delete_model" -> {
                     System.out.println("please provide brand name:");
                     String brandName = scanner.nextLine();
@@ -62,10 +58,6 @@ public class ApplicationCommand implements CommandLineRunner {
                     modelService.listAll().forEach(System.out::println);
                 }
                 case "add_model" -> {
-                    System.out.println("please provide uuid:");
-                    String uuid = scanner.nextLine();
-                    System.out.println("uuid: " + uuid);
-
                     System.out.println("please provide brand name");
                     String brandName = scanner.nextLine();
                     System.out.println("brand:"+brandName);
@@ -85,7 +77,7 @@ public class ApplicationCommand implements CommandLineRunner {
 
                     modelService.addModelToBrand(brandName,
                         Model.builder()
-                        .uuid(UUID.fromString(uuid))
+                        .uuid(UUID.randomUUID())
                         .name(name)
                         .price(price)
                         .announceYear(year)
