@@ -5,4 +5,4 @@ An introduction to spring framework consisting of:
 - Components
 - Autowiring
 - Services
-- Repositories 
+- JPA Repositories 
